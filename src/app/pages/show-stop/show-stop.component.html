@@ -1,3 +1,57 @@
-<p>
-  show-stop works!
-</p>
+<section class="app-main-content"
+  [ngClass]="{'app-align-top': !progress}">
+  <mat-spinner *ngIf="progress"></mat-spinner>
+  <mat-card class="app-card app-card-large"
+    *ngIf="!progress">
+    <mat-card-title class="app-card-title">Seach stop</mat-card-title>
+    <mat-card-content>
+      <div>
+        <mat-accordion *ngIf="!progress">
+          <mat-expansion-panel *ngFor="let item of stopResponse.stops; let i = index;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <b>{{ i + 1 }}.</b> {{ item.name }}
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+
+            <mat-list>
+              <mat-list-item>
+                <div class="app-flex app-justify-between app-width-1-1">
+                  <div>Yonge-University-Spadina Subway To Finch Station</div>
+                  <div><b>11:49a </b></div>
+                </div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <div class="app-flex app-justify-between app-width-1-1">
+                  <div>Yonge-University-Spadina Subway To Finch Station</div>
+                  <div><b>11:49a </b></div>
+                </div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <div class="app-flex app-justify-between app-width-1-1">
+                  <div>Yonge-University-Spadina Subway To Finch Station</div>
+                  <div><b>11:49a </b></div>
+                </div>
+              </mat-list-item>
+
+              <mat-list-item>
+                <div class="app-flex app-justify-between app-width-1-1">
+                  <div>Yonge-University-Spadina Subway To Finch Station</div>
+                  <div><b>11:49a </b></div>
+                </div>
+              </mat-list-item>
+
+            </mat-list>
+
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</section>

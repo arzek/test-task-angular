@@ -1,4 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app-main-content {
+  display: flex;
+  padding: 5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: map_get(mat-palette($mat-indigo), 800);
+  box-sizing: border-box;
+}
+
+.app-card {
+  width: 25em;
+  padding: 2em;
+
+  &-content {
+    display: grid;
+    grid-template-columns: auto 6em;
+    grid-gap: 2em;
+    align-items: center;
+  }
+
+  &-large {
+    width: 50em;
+  }
+
+  .app-card-title {
+    margin-bottom: .5em;
+  }
+}
+
+
+.app-flex {
+  display: flex;
+}
+
+.app-justify-between {
+  justify-content: space-between;
+}
+
+.app-align-top {
+  align-items: flex-start;
+}
+
+.app-width-1-1 {
+  width: 100%;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: white;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: 0 0 0;
+}
