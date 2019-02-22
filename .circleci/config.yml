@@ -19,7 +19,7 @@ jobs:
             - "node_modules"
       - run:
           name: Lint
-          command: npm lint
+          command: npm run lint
       - run:
           name: Run unit test
           command: npm run test
