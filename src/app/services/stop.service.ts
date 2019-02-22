@@ -11,6 +11,6 @@ export class StopService {
   constructor(private http: HttpService) { }
 
   getStopById(stopId: string): Promise<StopResponse> {
-    return this.http.get(`${environment.stopApi}/${stopId}`);
+    return this.http.get(`${environment.stopApi}/?id=${stopId}`);
   }
 }
