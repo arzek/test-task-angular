@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StopResponse } from 'src/app/types';
 import { StopService } from 'src/app/services/stop.service';
+import { StopResponse } from 'src/app/models/stop-response.model';
 
 @Component({
   selector: 'app-show-stop',
@@ -28,5 +28,4 @@ export class ShowStopComponent implements OnInit {
       }
     });
   }
-
 }

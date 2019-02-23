@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { SearchStopComponent } from './pages/search-stop/search-stop.component';
 import { ShowStopComponent } from './pages/show-stop/show-stop.component';
 

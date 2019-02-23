@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { environment } from 'src/environments/environment';
-import { StopResponse } from '../types';
+import { StopResponse } from '../models/stop-response.model';
 
 @Injectable({
   providedIn: 'root'
