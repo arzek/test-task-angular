@@ -8,9 +8,9 @@ jobs:
       - checkout
       - restore_cache:
           key: my-project-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Firebase Tools
-          command: npm install --prefix=./firebase-deploy firebase-tools
+      # - run:
+      #     name: Install Firebase Tools
+      #     command: npm install --prefix=./firebase-deploy firebase-tools
       - run:
           name: Install Angular CLI
           command: sudo npm install -g @angular/cli
@@ -36,9 +36,9 @@ jobs:
       - run:
           name: Run e2e test
           command: ng e2e --port=5000
-      - run:
-          name: Build project
-          command: ng build --prod
-      - run:
-          name: Deploy to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --project=test-task-angular --token=$FIREBASE_TOKEN
+      # - run:
+      #     name: Build project
+      #     command: ng build --prod
+      # - run:
+      #     name: Deploy to Firebase
+      #     command: ./firebase-deploy/node_modules/.bin/firebase deploy --project=test-task-angular --token=$FIREBASE_TOKEN
