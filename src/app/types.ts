@@ -13,6 +13,9 @@ export class Stop {
 }
 
 export class Route {
+  name: string;
+  route_group_id: string;
+  uri: string;
   stop_times: StopTime[];
 }
 

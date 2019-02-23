@@ -10,11 +10,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchStopComponent } from './pages/search-stop/search-stop.component';
 import { ShowStopComponent } from './pages/show-stop/show-stop.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { ShowStopComponent } from './pages/show-stop/show-stop.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatProgressSpinnerModule,

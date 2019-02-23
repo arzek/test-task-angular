@@ -9,6 +9,10 @@ const routes: Routes = [
     component: SearchStopComponent,
   },
   {
+    path: 'stop',
+    redirectTo: ''
+  },
+  {
     path: 'stop/:id',
     component: ShowStopComponent
   }

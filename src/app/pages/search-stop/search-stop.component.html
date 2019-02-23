@@ -2,17 +2,23 @@
   <mat-card class="app-card">
     <mat-card-title class="app-card-title">Seach stop</mat-card-title>
     <mat-card-content>
-      <div class="app-card-content">
-        <mat-form-field class="example-full-width">
-          <input matInput
-            placeholder="Favorite food"
-            value="Sushi">
-        </mat-form-field>
+      <form (submit)="handleSubmit(); false">
+        <div class="app-card-content">
+          <mat-form-field class="example-full-width">
+            <input matInput
+              name="stopId"
+              placeholder="Stop id"
+              [(ngModel)]="stopId"
+              required>
+          </mat-form-field>
 
-        <button mat-raised-button
-          color="accent">Seach
-        </button>
-      </div>
+          <button mat-raised-button
+            color="accent"
+            type="submit">Seach
+          </button>
+        </div>
+      </form>
+
     </mat-card-content>
   </mat-card>
 </section>

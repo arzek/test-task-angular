@@ -1,10 +1,12 @@
 <section class="app-main-content"
   [ngClass]="{'app-align-top': !progress}">
-  <mat-spinner *ngIf="progress"></mat-spinner>
   <mat-card class="app-card app-card-large"
     *ngIf="!progress">
-    <mat-card-title class="app-card-title">Seach stop</mat-card-title>
-    <mat-card-content>
+    <mat-card-title class="app-card-title"
+      *ngIf="!error">Stop - {{ stopResponse.name }}</mat-card-title>
+    <mat-card-title class="app-card-title"
+      *ngIf="error">Error</mat-card-title>
+    <mat-card-content *ngIf="!error">
       <div>
         <mat-accordion *ngIf="!progress">
           <mat-expansion-panel *ngFor="let item of stopResponse.stops; let i = index;">
@@ -16,34 +18,13 @@
             </mat-expansion-panel-header>
 
             <mat-list>
-              <mat-list-item>
+              <mat-list-item *ngFor="let route of item.routes">
                 <div class="app-flex app-justify-between app-width-1-1">
-                  <div>Yonge-University-Spadina Subway To Finch Station</div>
-                  <div><b>11:49a </b></div>
+                  <div>{{ route.name }}</div>
+                  <div><b>{{ route.stop_times[0].departure_time }} </b></div>
                 </div>
-              </mat-list-item>
 
-              <mat-list-item>
-                <div class="app-flex app-justify-between app-width-1-1">
-                  <div>Yonge-University-Spadina Subway To Finch Station</div>
-                  <div><b>11:49a </b></div>
-                </div>
               </mat-list-item>
-
-              <mat-list-item>
-                <div class="app-flex app-justify-between app-width-1-1">
-                  <div>Yonge-University-Spadina Subway To Finch Station</div>
-                  <div><b>11:49a </b></div>
-                </div>
-              </mat-list-item>
-
-              <mat-list-item>
-                <div class="app-flex app-justify-between app-width-1-1">
-                  <div>Yonge-University-Spadina Subway To Finch Station</div>
-                  <div><b>11:49a </b></div>
-                </div>
-              </mat-list-item>
-
             </mat-list>
 
 
@@ -54,4 +35,6 @@
     </mat-card-content>
 
   </mat-card>
+
+  <mat-spinner *ngIf="progress"></mat-spinner>
 </section>
