@@ -41,4 +41,4 @@ jobs:
           command: ng build --prod
       - run:
           name: Deploy to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --project=logger-console --token=$FIREBASE_TOKEN
+          command: ./firebase-deploy/node_modules/.bin/firebase deploy --project=test-task-angular --token=$FIREBASE_TOKEN
