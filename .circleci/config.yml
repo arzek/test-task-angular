@@ -23,7 +23,7 @@ jobs:
             - "node_modules"
       - run:
           name: Run server
-          command: pm2 server.js
+          command: pm2 start server.js
       - run:
           name: Lint
           command: npm run lint
