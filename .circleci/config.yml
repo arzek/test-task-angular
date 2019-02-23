@@ -32,7 +32,7 @@ jobs:
           command: npm run test -- --no-watch --no-progress
       - run:
           name: Run e2e test
-          command: npm run e2e -- --port=5000 --protractor-config=e2e/protractor-ci.conf.js
+          command: ng e2e --port=5000
       # - run:
       #     name: Build project
       #     command: ng build --prod
