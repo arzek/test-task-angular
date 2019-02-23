@@ -30,6 +30,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 50em;
   }
 
+  &-footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+
   .app-card-title {
     margin-bottom: .5em;
   }
