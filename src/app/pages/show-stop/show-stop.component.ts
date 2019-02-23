@@ -5,8 +5,7 @@ import { StopService } from 'src/app/services/stop.service';
 
 @Component({
   selector: 'app-show-stop',
-  templateUrl: './show-stop.component.html',
-  styleUrls: ['./show-stop.component.scss']
+  templateUrl: './show-stop.component.html'
 })
 export class ShowStopComponent implements OnInit {
 

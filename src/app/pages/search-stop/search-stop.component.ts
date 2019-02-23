@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-stop',
-  templateUrl: './search-stop.component.html',
-  styleUrls: ['./search-stop.component.scss']
+  templateUrl: './search-stop.component.html'
 })
 export class SearchStopComponent {
 

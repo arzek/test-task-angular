@@ -4,37 +4,41 @@
     *ngIf="!progress">
     <mat-card-title class="app-card-title"
       *ngIf="!error">Stop - {{ stopResponse.name }}</mat-card-title>
-    <mat-card-title class="app-card-title"
-      *ngIf="error">Error</mat-card-title>
+    <mat-card-title class="app-card-title app-text-error"
+      *ngIf="error">
+      Sorry, an error occurred, please try again
+    </mat-card-title>
     <mat-card-content *ngIf="!error">
       <div>
         <mat-accordion *ngIf="!progress">
           <mat-expansion-panel *ngFor="let item of stopResponse.stops; let i = index;">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <b>{{ i + 1 }}.</b> {{ item.name }}
+                <b>{{ i + 1 }}.</b> &nbsp; {{ item.name }}
               </mat-panel-title>
-
             </mat-expansion-panel-header>
-
             <mat-list>
-              <mat-list-item *ngFor="let route of item.routes">
+              <mat-list-item *ngIf="!item.routes.length">
+                <div class="app-flex app-justify-between app-width-1-1">
+                  <div>Sorry, no routes found</div>
+                </div>
+              </mat-list-item>
+              <mat-list-item *ngFor="let route of item.routes; let routeIndex = index;">
+                <mat-divider *ngIf="(routeIndex + 1) <  item.routes.length"></mat-divider>
                 <div class="app-flex app-justify-between app-width-1-1">
                   <div>{{ route.name }}</div>
-                  <div><b>{{ route.stop_times[0].departure_time }} </b></div>
+                  <div>
+                    <mat-chip-list>
+                      <mat-chip>{{ route.stop_times[0].departure_time }}</mat-chip>
+                    </mat-chip-list>
+                  </div>
                 </div>
-
               </mat-list-item>
             </mat-list>
-
-
           </mat-expansion-panel>
-
         </mat-accordion>
       </div>
     </mat-card-content>
-
   </mat-card>
-
   <mat-spinner *ngIf="progress"></mat-spinner>
 </section>
